@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Clock app
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+        link(rel="stylesheet", href="src/style.css")
+
+        script(src="src/script.js" defer type="module") 
+    body 
+        modal.modal 
+            span.loader
+        main.main   
+            .principal
+                .principal__phrase.phrase
+                    .phrase__main 
+                        .phrase__text 
+                        picture.phrase__picture 
+                            img(src="assets/icon-refresh.svg", alt="refresh icon")
+                    .phrase__author 
+                .principal__data.data 
+                    .data__information 
+                        .data__greeting 
+                            picture.data__picture.data__picture--weather 
+                                img(src="assets/icon-sun.svg", alt="sun icon").data__icon
+                            .data__reception
+                        .data__time 
+                            .data__hour 
+                            .data__standard  
+                        .data__place 
+                    .data__action 
+                        button.data__button
+                            .data__action-text more 
+                            picture.data__picture.data__picture--show 
+                                img(src="assets/icon-arrow-up.svg", alt="arrow icon").data__arrow
+
+
+            .information
+                .information__column 
+                    .information__row 
+                        .information__label current timezone 
+                        .information__data.information__data--place
+                    .information__row 
+                        .information__label day of the year 
+                        .information__data.information__data--day-year 
+                .information__column 
+                    .information__row 
+                        .information__label day of the week
+                        .information__data.information__data--day-week
+                    .information__row 
+                        .information__label week number 
+                        .information__data.information__data--week

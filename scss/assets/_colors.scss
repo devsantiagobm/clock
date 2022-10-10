@@ -1,0 +1,13 @@
+:root{
+    --text: #fff;
+    --text-gray: #303030;
+    --bg-image: url(../assets/desktop/bg-image-daytime.jpg);
+    --bg-light: rgba(0,0,0,.7);
+    --bg-dark: transparent;
+    
+    
+    
+    --bg: var(--bg-light);
+    --bg-data: rgba(255,255,255, 0.85);
+    --text-data: var(--text-gray);
+}

@@ -1,0 +1,237 @@
+@use '../assets/assets' as *;
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.phrase {
+    max-height: 0px;
+    min-height: 50vh;
+    max-width: 60%;
+    padding: 48px 10vw;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+    transition: min-height .5s ease, padding .5s ease;
+
+    &--hidden {
+        padding: 0px 10vw;
+        min-height: 0px;
+    }
+
+    &__main {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__picture {
+        min-width: 24px;
+        max-height: 24px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition: transform .3s ease;
+        user-select: none;
+
+        @media (hover:hover) {
+            &:hover {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__text {
+        font-size: .8rem;
+        font-weight: $light;
+        line-height: 1.3rem;
+    }
+
+    &__author {
+        font-size: .9rem;
+        font-weight: $bold;
+    }
+}
+
+.data {
+    min-height: 50vh;
+    padding: 48px 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__information {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__greeting {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: uppercase;
+        font-weight: $light;
+        letter-spacing: 1px;
+        font-size: .9rem;
+    }
+
+    &__time {
+        display: flex;
+        align-items: flex-end;
+        text-transform: uppercase;
+    }
+
+    &__hour {
+        font-weight: $bold;
+        font-size: 7.5rem;
+        line-height: calc(7.5rem - 32px);
+    }
+
+    &__standard {
+        font-weight: $light;
+        font-size: .9rem;
+    }
+
+    &__place {
+        font-weight: $bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: .9rem;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        color: #303030;
+        text-transform: uppercase;
+        padding: 6px 6px 6px 12px;
+        gap: 8px;
+        font-size: .6rem;
+        letter-spacing: 2px;
+        border-radius: 25px;
+        cursor: pointer;
+        user-select: none;
+        border: none;
+        outline: none;
+
+        &.data__button--active .data__picture--show {
+            transform: rotate(0deg);
+        }
+
+        @media (hover:hover) {
+            &:hover .data__picture--show {
+                transform: rotate(0deg);
+            }
+
+            &.data__button--active:hover .data__picture--show {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__action-text {
+        line-height: 0;
+    }
+
+    &__picture--show {
+        max-width: 24px;
+        display: grid;
+        place-items: center;
+        transform: rotate(180deg);
+        transition: transform .2s ease;
+    }
+
+    &__picture--weather {
+        animation: weatherIcon 5s infinite linear;
+    }
+
+    @keyframes weatherIcon {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-3px);
+        }
+    }
+
+}
+
+@mixin principal-924 {
+    .phrase {
+        max-width: 100%;
+
+        &__text {
+            max-height: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &__main {
+            display: flex;
+            width: 100%;
+            gap: 8px;
+            justify-content: space-between;
+        }
+    }
+
+    .data {
+
+        &__time {
+            gap: 8px;
+        }
+
+        &__hour {
+            font-size: 6rem;
+            line-height: calc(6.5rem - 32px);
+        }
+
+        &__greeting {
+            font-size: .8rem;
+        }
+
+        &__standard {
+            font-size: .8rem;
+        }
+
+        &__place {
+            font-size: .7rem;
+        }
+    }
+}
+
+@mixin principal-672 {
+    .data {
+        justify-content: center;
+        gap: 24px;
+        align-items: flex-start;
+        flex-direction: column;
+
+        &__information{
+            gap: 24px;
+        }
+        &__button {
+            font-size: .6rem;
+            padding: 8px 10px 8px 16px;
+
+        }
+
+        &__reception{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: .7rem;
+        }
+
+        &__hour {
+            font-size: 5rem;
+            line-height: calc(5.5rem - 32px);
+        }
+    }
+}

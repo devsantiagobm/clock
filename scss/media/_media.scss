@@ -1,0 +1,12 @@
+@use '../principal/principal' as *;
+@use '../information/information' as *;
+
+@media screen and (max-width: 924px){
+    @include principal-924();
+    @include information-924();
+}
+
+@media screen and (max-width: 672px){
+    @include information-672();
+    @include principal-672();
+}
